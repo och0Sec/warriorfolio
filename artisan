@@ -14,6 +14,10 @@ define('LARAVEL_START', microtime(true));
 | loading of any of our classes manually. It's great to relax.
 |
 */
+if (!file_exists(__DIR__.'/vendor/autoload.php')) {
+    fwrite(STDERR, "Composer is not installed. Please run 'composer install' in the project root.\n");
+    exit(1);
+}
 
 require __DIR__.'/vendor/autoload.php';
 
